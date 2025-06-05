@@ -5,6 +5,7 @@ int main() {
 
     char estado1;
     char state2[4];
+    int menu;
     char codigo1[20], codigo2[20];
     char nomecidade1[20], nomecidade2[20];
     int populacao1, populacao2;
@@ -19,6 +20,7 @@ int main() {
     int resultadoptsturisticos;
     float pibper1, pibper2;
     float resultadopibper;
+
 
     printf("Insira os dados da carta 1\n");
     printf("Insira a inicial do estado 1:\n");
@@ -90,32 +92,61 @@ int main() {
     printf("O pib per capta é de:\n");
     printf("%f\n", pibper2 = pib2/populacao2);
 
+  printf("Escolha uma opção:\n");
+  printf("\n1. Resultado população\n");
+  printf("\n2. Resultado area\n");
+  printf("\n3. Resultado pib\n");
+  printf("\n4. Resultado densidade\n");
+  printf("\n5. Resultado pontos turísticos\n");
+  printf("\n6. Resultado pib per capta\n");
+  scanf("%d", &menu);
 
-
-    printf("*** RESULTADO ***:\n");
-    printf("*** POPULAÇÃO ***:\n");
+switch (menu) {
+  case 1:
+        printf("*** RESULTADO ***:\n");
+        printf("*** POPULAÇÃO ***:\n");
     if(populacao1 > populacao2){
         printf("Carta 1 ganhou\n");
-    } else {printf("Carta 2 ganhou\n");}
-    printf("*** ÁREA ***:\n");
+    } else if (populacao1 < populacao2){printf("Carta 2 ganhou\n");}
+    else{printf("Empate");}
+    break;
+    case 2:
+        printf("*** ÁREA ***:\n");
     if(area1 > area2){
         printf("Carta 1 ganhou\n");
-    } else {printf("Carta 2 ganhou\n");}
+    } else if (area1 < area2){printf("Carta 2 ganhou\n");}
+    else{printf("Empate");}
+    break;
+     case 3:
     printf("*** PIB ***:\n");
     if(pib1 > pib2){
         printf("Carta 1 ganhou\n");
-    } else {printf("Carta 2 ganhou\n");}
+    }else if (pib1 < pib2){printf("Carta 2 ganhou\n");}
+    else{printf("Empate");}
+    break;
+     case 4:
     printf("*** DENSIDADE ***:\n");
     if(densidade1 < densidade2){
         printf("Carta 1 ganhou\n");
-    } else {printf("Carta 2 ganhou\n");}
+    } else if (densidade1 > densidade2){printf("Carta 2 ganhou\n");}
+    else{printf("Empate");}
+    break;
+     case 5:
     printf("*** PONTOS TURÍSTICOS ***:\n");
     if(ptsturisticos1 > ptsturisticos2){
         printf("Carta 1 ganhou\n");
-    } else {printf("Carta 2 ganhou\n");}
+    } else if (ptsturisticos1 < ptsturisticos2){printf("Carta 2 ganhou\n");}
+    else{printf("Empate");}
+    break;
+     case 6:
     printf("*** PIB PER CAPTA ***:\n");
 if(pibper1 > pibper2){
         printf("Carta 1 ganhou\n");
-    } else {printf("Carta 2 ganhou\n");}
+    } else if (pibper1 < pibper2){printf("Carta 2 ganhou\n");}
+    else{printf("Empate");}
+    break;
+
+ }
+
     return 0;
 }
